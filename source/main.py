@@ -73,7 +73,7 @@ for p in doc.paragraphs:
 
     elif "<НОМЕР1>" in p.text.upper():
         p.text = ''
-        p.insert_paragraph_before("             " + filename[3:-18] + "-ЛУ", "еспд-дец-1")
+        p.insert_paragraph_before(filename[3:-18] + "-ЛУ", "еспд-дец-1")
 
     for section in doc.sections:
         header = section.header
@@ -129,6 +129,7 @@ word = win32.Dispatch("Word.Application")
 word.Visible = False
 
 doc = word.Documents.Open(str(path))
+doc.Fields.Update()
 doc.TablesOfContents(1).Update()   # обновить содержание
 doc.Save()
 doc.Close()
