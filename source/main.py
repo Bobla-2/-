@@ -131,6 +131,11 @@ word.Visible = False
 doc = word.Documents.Open(str(path))
 doc.Fields.Update()
 doc.TablesOfContents(1).Update()   # обновить содержание
+doc.Activate()
+word.ActiveWindow.Panes(1).View.ShowAll = False
+word.Selection.WholeStory()
+word.Selection.Fields.Update()
+
 doc.Save()
 doc.Close()
 word.Quit()
