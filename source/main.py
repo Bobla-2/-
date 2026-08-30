@@ -66,14 +66,14 @@ for p in doc.paragraphs:
     elif "<НОМЕР>" in p.text.upper():
         p.text = ''
         p.insert_paragraph_before(filename[3:-18], "Заг искл огл")
-    elif "<НОМЕР2>" in p.text.upper():
-        p.text = ''
-        p.insert_paragraph_before(filename[3:-18] + "-ЛУ", "Заг искл огл")
+  #  elif "<НОМЕР2>" in p.text.upper():
+   #    p.text = ''
+    #    p.insert_paragraph_before(filename[3:-18] + "-ЛУ", "Заг искл огл")
 
 
-    elif "<НОМЕР1>" in p.text.upper():
-        p.text = ''
-        p.insert_paragraph_before(filename[3:-18] + "-ЛУ", "еспд-дец-1")
+    #elif "<НОМЕР1>" in p.text.upper():
+     #   p.text = ''
+      #  p.insert_paragraph_before(filename[3:-18] + "-ЛУ", "еспд-дец-1")
 
     for section in doc.sections:
         header = section.header
